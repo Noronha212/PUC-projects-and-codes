@@ -9,14 +9,12 @@ int main(void)
 	
 	printf("Qual e o raio da sua circunferencia: ");
 	scanf("%f", &raio);
+	if( raio > 0){
+	   area = PI * (raio*raio);
 	
-	   
-	
-	area = PI * (raio*raio);
-	
-	printf("a area da sua circunferencia e igual a %.2f\n", area);
-	printf("fim do ptograma, obrigado");
-	
+	   printf("a area da sua circunferencia e igual a %.2f\n", area);
+	   printf("fim do ptograma, obrigado\n");
+    }
 	system("pause");
 	return 0;
 }
