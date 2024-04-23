@@ -8,24 +8,23 @@ int main(void)
 	
 	printf("---------este programa calcula a area de qualquer Area----------\n");
 	
-	for(i=0;i < 3; i++){
+	do{
 		
  	  printf("Qual e o raio da sua circunferencia: ");
 	  scanf("%f", &raio);
 	  
 	  
-	    if( raio > 0){
+	    if( raio >= 0){
 	    	
 	      area = PI * (raio*raio);
 	      printf("a area da sua circunferencia e igual a %.2f\n", area);
         
-		}else{
+		}
 			
-    	 
-		  printf("valor invalido, tente novamente\n");
-        }  
-		 
-	} printf("fim do ptograma, obrigado\n");
+    } while(raio >= 0);
+	 
+	
+	printf("fim do ptograma, obrigado\n");
 	
 	system("pause");
 	return 0;
