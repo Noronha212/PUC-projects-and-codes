@@ -1,0 +1,39 @@
+//MGLC50 - função teste de ano bissexto 
+//Matheus Guido - 30/04/2024
+#include <stdio.h>
+#include <stdlib.h>
+
+int fbissexto(int a)  //função que retorna 1 se for bissexto ou 0 se não for
+{
+	if((a%4 == 0) && (a%100 != 0) || (a%400 == 0))
+	   return 1;  //é bissexto
+	else
+	   return 0;
+}
+	
+int main()
+{
+	int ano;
+	do
+	{
+	
+	    printf("digite um ano entre 1600 e3000(zero para sair): ");
+	    scanf("%d", &ano);
+	    if(ano == 0)
+	       break;
+	    if(ano<1600 || ano>3000)
+	    {
+	       printf("ano ivalido\n");
+	       continue;
+        }
+        if(fbissexto(ano) == 1)
+           printf("o ano %d e bissexto\n", ano);
+        else
+           printf("o ano %d mao e bissexto\n", ano);
+    
+    }while ( ano != 0);
+	
+	
+  system("pause");
+  return 0;
+}
