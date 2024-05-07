@@ -1,0 +1,40 @@
+//MGLC52 - funcao fatorial
+//Matheus Guido - 07/05/2024
+#include <stdio.h>
+#include <stdlib.h>
+
+int ffatorial(int n)
+{
+	int fat = 1;
+	for(int i = n; i >= 1; i--)
+	{
+		fat = fat * i;
+	}
+	return fat;
+}
+
+int main()
+{
+	int n, x;
+	
+	do
+	{
+		printf("\ndigite um numero inteiro de 1 a 12(zero para sair): ");
+		scanf("%d", &n);
+		if(n == 0)
+		   break;
+		if(n < 1 || n > 12)
+		{
+		   printf("\nnumero invalido, tente novamente\n");
+		   continue;
+	    }
+		
+		printf("\nO fatorial de %d e ygyal a %d\n", n, ffatorial(n));
+	
+	}while (n != 0);
+	
+	printf("\nFim\n\n");
+	
+  system("pause");
+  return 0;
+}
