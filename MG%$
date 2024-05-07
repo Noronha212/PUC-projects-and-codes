@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+	int matriz[5][10];
+	int i, j;
+	int n = 1;
+	
+	for(i = 0; i <= 4;i++)
+	{
+		for(j = 0; j <= 9; j++)
+		{
+			matriz[i][j] = n;
+			n++;
+		}
+	}
+	
+	for(i = 0; i <= 4; i++)
+	{
+		for(j = 0; j <= 9; j++)
+		{
+			printf("%4d", matriz[i][j]);
+			printf("\n");
+		}
+	}
+	
+}
+			
