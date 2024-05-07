@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int QTLINHAS = 10;
+int QTCOLUNAS = 20;
+
+int main()
+{
+	int matriz[QTLINHAS][QTCOLUNAS];
+	int i, j;
+	int n = 10;
+	
+	for(i = 0; i < QTLINHAS;i++)
+	{
+		for(j = 0; j < QTCOLUNAS; j++)
+		{
+			matriz[i][j] = n;
+			n=n+10;
+		}
+	}
+	
+	for(i = 0; i < QTLINHAS; i++)
+	{
+		for(j = 0; j < QTCOLUNAS; j++)
+		{
+			printf("%4d", matriz[i][j]);
+			
+		}
+	}
+	    printf("\n");
+}
+			
