@@ -17,6 +17,10 @@ int fverificador(int a,int b,int c)  //função para verificar a data segundo a 
 	    {
 	    	return 0;
 		}
+		else if(a < 0 || b < 0 || c < 0)
+		{
+			return 0;
+		}
 		else if(b > 12)
 		{
 			return 0;
@@ -38,22 +42,27 @@ int fverificador(int a,int b,int c)  //função para verificar a data segundo a 
 
 int fcalculo(int a,int b,int c)
 {
-	int diasdoano[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
-	int total = 0;
+	int mesesdoano[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
+	int total = 0, diasdoano = 365, diasquefaltam, diasquepassaram;
 	
 	if(c == 1)
 	{
-		diasdoano[1] = 29;
+	    mesesdoano[1] = 29;
 	}
 	
 	for (int i = 0; i < a - 1; i++)
 	{
-		total = total + diasdoano[i];
+		total = total + mesesdoano[i];
 	}
 	
 	total = total + b;
 	
-	return total;
+	diasquefaltam = diasdoano - total;
+	diasquepassaram = diasdoano - diasquefaltam;
+	
+	return diasquefaltam;
+	return diasquepassaram;
+	
 }
 
 int main(void)
@@ -76,7 +85,7 @@ int main(void)
 			bissexto = fbissexto(ano);
 		
 		    printf("\no ano %d/%d/%d e valido\n\n", dia, mes, ano);
-		    printf("%d\n\n", fcalculo(mes,dia,bissexto));
+		    printf("%d %d\n\n", fcalculo(mes,dia,bissexto), fcalculo(mes,dia,bissexto));
 		}		
 		else if(fverificador(dia,mes,ano) == 0)
 		{  
