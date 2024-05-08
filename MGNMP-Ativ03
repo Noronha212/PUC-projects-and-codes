@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int fbissexto(int c)  //função para verificar se o ano é ou não bissexto
+{        
+        // 1 para verdadeiro e 0 para falso
+        if((c%4 == 0) && (c%100 != 0) || (c%400 == 0))
+	        return 1;
+	    else
+	        return 0;
+}
+
+int fverificador(int a,int b,int c)  //função para verificar a data segundo a organização so calendáwio
+{                                    
+        // 1 para verdadeiro e 0 para falso
+	    if(a > 31)
+	    {
+	    	return 0;
+		}
+		else if(b > 12)
+		{
+			return 0;
+		}
+		else if(c < 1600)
+		{
+			return 0;
+		}
+		else if((b == 4 || b == 6 || b == 9 || b == 11) && a > 30)
+		{
+			return 0;
+		}
+	    else
+		{
+			return 1;
+		}
+		
+}
+
+int fcalculo(int a,int b,int c)
+{
+	int diasdoano[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
+	int total = 0;
+	
+	if(c == 1)
+	{
+		diasdoano[1] = 29;
+	}
+	
+	for (int i = 0; i < a - 1; i++)
+	{
+		total = total + diasdoano[i];
+	}
+	
+	total = total + b;
+	
+	return total;
+}
+
+int main(void)
+{
+	int ano, mes, dia;  //declarando variaveis
+	int bissexto;
+	
+	do
+	{
+		printf("digite uma data no formato DD/MM/AAAA(apos 1600 e zero para sair): ");
+		scanf("%d/%d/%d", &dia, &mes, &ano);
+		
+		//condições de verificação
+		if(dia == 0)
+		{
+			break;
+		}
+		else if(fverificador(dia,mes,ano) == 1)
+		{
+			bissexto = fbissexto(ano);
+		
+		    printf("\no ano %d/%d/%d e valido\n\n", dia, mes, ano);
+		    printf("%d\n\n", fcalculo(mes,dia,bissexto));
+		}		
+		else if(fverificador(dia,mes,ano) == 0)
+		{  
+		    printf("\nano ivalido\n\n"); 
+		}
+		
+		
+   }while (dia != 0);  //enquanto dia for diferente de zero o programa recicla
+   
+  printf("\n\nFIM\n\n");
+   
+  system("pause");
+  return 0;
+  
+}
