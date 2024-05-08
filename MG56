@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+	int mat[20][20];
+	int i, j;
+	int pri;
+	int n;
+	
+	for(i = 0; i <= 19; i++)
+	{
+		pri = i + 1;
+		n = pri;
+		
+		for(j = 0; j <= 19; j++)
+		{
+			mat[i][j] = n;
+		    n = n + pri;
+		}
+	}
+	
+	for(i = 0; i <= 19; i++)
+	{
+		for(j = 0; j <= 19; j++)
+		{
+			printf("%4d ", mat[i][j]);
+		}
+	    printf("\n");
+	}
+	
+}
