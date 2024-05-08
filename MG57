@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+	char tab[22][26];
+	int i, j;
+	
+	for(i = 0; i < 22; i++)
+	    for(j = 0; j < 26; j++)
+		    tab[i][j] = 'x';
+	
+	
+	printf("\t");
+    for(j = 0; j < 26; j++)
+		printf("%2d  ", j);
+	printf("\n\n");
+
+	
+	for(i = 0; i < 22; i++)
+		{
+		printf("%2d\t", i);
+		for(j = 0; j < 26; j++)
+		    printf(" %c  ",tab[i][j]);
+	    printf("\n");
+	    }
+		
+}
