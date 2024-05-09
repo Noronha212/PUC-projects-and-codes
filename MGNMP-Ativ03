@@ -25,7 +25,7 @@ int fverificador(int a,int b,int c)  //função para verificar a data segundo a 
 		{
 			return 0;
 		}
-		else if(c < 1600)
+		else if(c < 1600 || c > 5000)
 		{
 			return 0;
 		}
@@ -40,7 +40,29 @@ int fverificador(int a,int b,int c)  //função para verificar a data segundo a 
 		
 }
 
-int fcalculo(int a,int b,int c)
+int fdiasquefaltam(int a,int b,int c)
+{
+	int mesesdoano[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
+	int total = 0, diasdoano = 365, diasquefaltam;
+	
+	if(c == 1)
+	{
+	    mesesdoano[1] = 29;
+	}
+	
+	for (int i = 0; i < a - 1; i++)
+	{
+		total = total + mesesdoano[i];
+	}
+	
+	total = total + b;
+	diasquefaltam = diasdoano - total;
+	
+	return diasquefaltam;
+
+}
+
+int fdiasquepassaram(int a,int b,int c)
 {
 	int mesesdoano[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
 	int total = 0, diasdoano = 365, diasquefaltam, diasquepassaram;
@@ -57,22 +79,26 @@ int fcalculo(int a,int b,int c)
 	
 	total = total + b;
 	
-	diasquefaltam = diasdoano - total;
-	diasquepassaram = diasdoano - diasquefaltam;
-	
-	return diasquefaltam;
-	return diasquepassaram;
-	
+	return total;
 }
+
 
 int main(void)
 {
+	
 	int ano, mes, dia;  //declarando variaveis
 	int bissexto;
 	
+	printf("+-------------------------------------------------------------------------------------------+\n");
+	printf("|         PRograma de verificacao de data e dias percorridos e que faltam em um ano         |\n");
+	printf("|                                                                                           |\n");
+	printf("|                                    por Matheus Noronha                                    |\n");
+	printf("+-------------------------------------------------------------------------------------------+\n\n");
+	
+	
 	do
 	{
-		printf("digite uma data no formato DD/MM/AAAA(apos 1600 e zero para sair): ");
+		printf("digite uma data no formato DD/MM/AAAA 01/01/1600 e 31/12/5000(zero para sair): ");
 		scanf("%d/%d/%d", &dia, &mes, &ano);
 		
 		//condições de verificação
@@ -83,21 +109,22 @@ int main(void)
 		else if(fverificador(dia,mes,ano) == 1)
 		{
 			bissexto = fbissexto(ano);
-		
-		    printf("\no ano %d/%d/%d e valido\n\n", dia, mes, ano);
-		    printf("%d %d\n\n", fcalculo(mes,dia,bissexto), fcalculo(mes,dia,bissexto));
+			
+			printf("\nData %d/%d/%d   %d dias desde o inicio e %d ate o fim do ano\n\n", dia, mes, ano, fdiasquepassaram(mes,dia,bissexto), fdiasquefaltam(mes,dia,bissexto));
 		}		
 		else if(fverificador(dia,mes,ano) == 0)
 		{  
-		    printf("\nano ivalido\n\n"); 
+		    printf("\nano ivalido, tente novamente\n\n"); 
 		}
 		
+	system("pause");    //Pausa no loop
+	printf("\n");	
 		
    }while (dia != 0);  //enquanto dia for diferente de zero o programa recicla
    
-  printf("\n\nFIM\n\n");
+  printf("\n\nFim, obrigado\n\n");      //mensagem de saida do programa
    
-  system("pause");
+  system("pause");  /*É usado mo final pois fora da IDE(no terminal) o programa simplesmente fecha sem pedir confirmação*/
   return 0;
   
 }
