@@ -11,7 +11,6 @@ int fdiasinicioano(int d,int m,int b);
 
 int main(void)
 {
-	
 	int ano, mes, dia;  //declarando variaveis
 	int bissexto;
 	
@@ -21,24 +20,17 @@ int main(void)
 	printf("|                                    por Matheus Noronha                                    |\n");
 	printf("+-------------------------------------------------------------------------------------------+\n\n");
 	
-	
 	do
 	{
 		printf("digite uma data no formato DD/MM/AAAA 01/01/1600 e 31/12/5000(zero para sair): ");
 		scanf("%d/%d/%d", &dia, &mes, &ano);
 		
-		if(dia == 0)
-		{
+		if(dia == 0){
 			break;
-		}
-		else if(fanovalido(dia,mes,ano) == 1)
-		{
+		}else if(fanovalido(dia,mes,ano) == 1){
 			bissexto = fanobissexto(ano);
-			
 			printf("\nData %d/%d/%d   %d dias desde o inicio e %d ate o fim do ano\n\n", dia, mes, ano, fdiasinicioano(dia,mes,bissexto), fdiasfimano(dia,mes,bissexto));
-		}		
-		else if(fanovalido(dia,mes,ano) == 0)
-		{  
+		}else if(fanovalido(dia,mes,ano) == 0){
 		    printf("\nano ivalido, tente novamente\n\n"); 
 		}
 		
@@ -47,8 +39,7 @@ int main(void)
 		
    }while (dia != 0);  //enquanto dia for diferente de zero o programa recicla
    
-  printf("\n\nFim, obrigado\n\n");      //mensagem de saida do programa
-   
+  printf("\n\nFim, obrigado\n\n");      //mensagem de saida do programa 
   system("pause");  /*É usado mo final pois fora da IDE(no terminal) o programa simplesmente fecha sem pedir confirmação*/
   return 0;
   
@@ -66,28 +57,17 @@ int fanobissexto(int a)  //função para verificar se o ano é ou não bissexto
 int fanovalido(int d,int m,int a)  //função para verificar a data segundo a organização do calendáwio
 {                                    
         // 1 para verdadeiro e 0 para falso
-	    if(d > 31)
-	    {
+	    if(d > 31){
 	    	return 0;
-		}
-		else if(d < 0 || m < 0 || a < 0)
-		{
+		}else if(d < 0 || m < 0 || a < 0){
 			return 0;
-		}
-		else if(m > 12)
-		{
+		}else if(m > 12){		
 			return 0;
-		}
-		else if(a < 1600 || a > 5000)
-		{
+		}else if(a < 1600 || a > 5000){
 			return 0;
-		}
-		else if((m == 4 || m == 6 || m == 9 || m == 11) && d > 30)
-		{
+		}else if((m == 4 || m == 6 || m == 9 || m == 11) && d > 30){
 			return 0;
-		}
-	    else
-		{
+		}else{
 			return 1;
 		}
 		
@@ -99,9 +79,7 @@ int fdiasinicioano(int d,int m,int b)
 	int total = 0;
 	
 	if(b == 1)
-	{
 	    mesesdoano[1] = 29;
-	}
 	
 	for (int i = 0; i < m - 1; i++)
 	{
@@ -119,10 +97,7 @@ int fdiasfimano(int d,int m,int b)
 	int total = 0, diasdoano = 365, diasquefaltam;
 	
 	if(b == 1)
-	{
 	    mesesdoano[1] = 29;
-	    diasdoano = diasdoano + 1;
-	}
 	
 	for (int i = 0; i < m - 1; i++)
 	{
@@ -130,6 +105,10 @@ int fdiasfimano(int d,int m,int b)
 	}
 	
 	total = total + d;
+	
+	if(b == 1 && total < 29){
+		 diasdoano = diasdoano + 1;
+	}
 	
 	diasquefaltam = diasdoano - total;
 	
