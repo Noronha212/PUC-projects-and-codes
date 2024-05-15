@@ -1,0 +1,53 @@
+#include <iostream>
+
+void fgrupo(struct stamigo am[4]); 
+void fclear();
+
+struct stamigo
+    {
+    char nome[40];
+    char cel[12];
+    int idade;
+	};
+
+int main(void)
+{
+struct stamigo amigos[4];
+
+    
+    for(int i = 0;i < 4; i++)
+    {
+    	printf("nome: ");
+    	gets(amigos[i].nome);
+		fclear();
+    	printf("celular: ");
+    	gets(amigos[i].cel);
+    	printf("idade: ");
+    	scanf("%d", &amigos[i].idade);
+    
+    	fclear();
+        
+	}
+	fgrupo(amigos);
+	
+}
+
+void fgrupo(struct stamigo am[4])
+{
+	system("cls"); //limpa a tela
+	int j;
+	printf("\ngrupo dos 4 amigos\n");
+	printf("--------------------------------------\n");
+	for(j = 0; j < 4; j++)
+	{
+		printf("%s\n", am[j].nome);
+		printf("celular: %s\t\t", am[j].cel);
+		printf("%d anos\n\n", am[j].idade);
+	}
+}
+ 
+void fclear()
+{
+	char carac;
+	while ( (carac = fgetc(stdin)) != EOF && carac != '\n') {}
+}
