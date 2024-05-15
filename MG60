@@ -1,0 +1,57 @@
+//MGLC60 - structs
+//Matheus Noronha - 15/05/2024
+
+#include <stdio.h>
+
+void faluno(char n[40], char s, int i, float md);
+void fclear();
+
+int main(void)
+{
+struct staluno
+    {
+    char nome[40];
+    char sexo;
+    int idade;
+    float media;
+    };
+    
+ struct staluno aluno;
+        
+        
+        do
+        {
+        	printf("\nNome (enter para sair): ");
+        	gets(aluno.nome);
+        	if (aluno.nome[0] == '\0')
+        	    break;
+        	printf("esxo: ");
+        	scanf("%c", &aluno.sexo);
+        	fclear();
+        	printf("idade:");
+        	scanf("%d", &aluno.idade);
+        	printf("media: ");
+        	scanf("%f", &aluno.media);
+        	
+        	faluno(aluno.nome, aluno.sexo, aluno.idade, aluno.media);
+        	
+        	//fclear();
+        	
+		} while (1);
+}
+
+void faluno(char n[40], char s, int i, float md)
+    {
+	printf("\n----------------------------------------------------------------\n");
+    printf("%s", n);
+    printf("\tSexo: %c\t\t", s);
+    printf("%d anos\t\t", i);
+    printf("Nota media: %4.1f\n", md);
+    printf("\n----------------------------------------------------------------\n");
+    }
+    
+atheusvoid fclear()
+{
+	char carac;
+	while ( (carac = fgetc(stdin)) != EOF && carac != '\n') {}
+}
