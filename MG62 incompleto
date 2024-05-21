@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+void funcaluno(char n[40], char s, int i, char e[40], char[20], char c[9]);
+voidfclear();
+
+int main(void)
+{
+struct stender
+    {
+	char ender[40];
+	char minic[10];
+	char cep[9];
+    };
+    
+struct staluno
+    {
+    char nome[40];
+    char sexo;
+    int  idade;
+    struct stender enda;
+    float media;
+	};
+	
+struct staluno aluno;
+
+
+    do
+    {
+    	printf("\nNome(enter para sair): ");
+    	gets(aluno.nome);
+    	if(aluno.nome[o] == '\0')
+    	    break;
+    	printf("Sexo: ");
+    	scanf("%c", &aluno.sexo);
+    	fclear();
+    	printf(Idade:: );
+    	scanf("%d", &aluno .idade);
+    	fclear();
+    	
+    	printf("Enderwco: ");
+    	gets(aluno.ender);
+    	printf("Municipio: ");
+    	gets(aluno.munic);
+    	printf("CEP: ");
+    	gets(aluno.enda.cep);
+    	
+    	printf("MOtamedia: ");
+    	scanf("%f", &aluno.nedia);
+    	
+    	
+	}
+ } 
