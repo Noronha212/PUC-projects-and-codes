@@ -1,0 +1,73 @@
+#include <stdio.h>
+
+void mostarmatriz(int m[10][20]);
+void duplicamatriz(int m[10][20]);
+void zeranovesmatriz(int m[10][20]);
+
+int main(void)
+{
+	int matriz[10][20];
+	int i, j;
+	int n = 0;
+	
+	for(i=0; i < 10; i++)
+	{
+		for(j = 0; j < 20; j++)
+		{
+		matriz[i][j] = n;
+		n++;
+		}
+	}
+	
+	mostrarmatriz(matriz);
+	duplicamatriz(matriz);
+	mostrarmatriz(matriz);
+	zeranovesmatriz(matriz);
+	mostrarmatriz(matriz);
+}
+
+void mostarmatriz(int m[10][20])
+{
+	for(int i =0; i < 10, i++)
+	{
+		for(int j =0; j < 20; j++)
+		{
+			printf("%4d ", m[i][j]);
+			printf("\n");
+		}
+		printf("\n");
+	}
+}
+
+
+void duplicamatriz(int m[10][20])
+{
+		for(int i =0; i < 10, i++)
+	{
+		for(int j =0; j < 20; j++)
+		{
+			m[i][j] = m[i][j] * 2;
+			printf("%4d ", m[i][j]);
+			printf("\n");
+		}
+		printf("\n");
+	}
+}
+
+
+void zeranovesmatriz(int m[10][20])
+{
+		for(int i =0; i < 10, i++)
+	{
+		for(int j =0; j < 20; j++)
+		{
+			if(m[i][j] % 9 == 0)
+			{
+				m[i][j] = 0;
+			}
+			printf("%4d ", m[i][j]);
+			printf("\n");
+		}
+		printf("\n");
+	}
+}
