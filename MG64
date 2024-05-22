@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+void funcdobra1vel(int m1, int n2);
+void funcdobra2vel(int *pn1, int *pn2);
+
+//ponteiros:    imt *p define um ponteiro(variavel que contem um endereco na memoria) 
+//              *p numa espressao: é o conteudo do endereco comtido em p
+//              p = &n: o ponteiro p recebe o endereco
+
+int main(void)
+{
+	int a, b;
+	
+	printf("Teste de passagem de parametros\n");
+	printf("digite um valor inteiro para a: ");
+	scanf("%d", &a);
+	printf("digite o valor inteiro para b: ");
+	scanf("%d", &b);
+	
+	printf("\nPassagem por valor\n");
+	funcdobra1vel(a,b);
+	printf("Apos a funcdobra1velcom passagem por valor temos: ");
+	printf("a = %d\tb = %d\n", a, b);
+	
+	printf("\n\nPassagem por referencia\n");
+	funcdobra2vel(&a,&b);
+	printf("Apos a funcdobra2vel com passagem com refwrwenciatemos: ");
+	printf("a = %d\tb = %d\n",a ,b);
+	
+	
+}
+
+void funcdobra1vel(int n1, int n2)
+{
+	n1 = n1 * 2;
+	n2 = n2 * 2;
+	printf("dentro da funcdobra1vel os valores sao dobrados: ");
+	printf("n1 = %d\tn2 = %d\n", n1, n2);
+}
+
+void funcdobra2vel(int *pn1, int *pn2)
+{
+	*pn1 = *pn1 * 2;
+	*pn2 = *pn2 * 2;
+	printf("entro da funcdobra2vel os valores sao dobrados:");
+	printf("*pn1 = %d\t*pn2 = %d\n", *pn1, *pn2);
+}
