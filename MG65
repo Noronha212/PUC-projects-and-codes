@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+void fvalor(float *pva1, float tx);
+
+int main(void)
+{
+	float val, taxa;
+	
+	do
+	{
+		printf("\nDigite o valor monetario ( para sair): ");
+		scanf("%f", &val);
+		if(val == 0)
+		    break;
+		
+		printf("Digite a taxa percentual a ser aplicado sobre o valor: ");
+		scanf("%f", &taxa);
+		
+		fvalor(&val, taxa);
+		
+		printf("Resultado: %.2f\n", val);
+		
+	} while(val != 0);
+	
+	
+}
+
+void fvalor(float *pval, float tx)
+{
+	*pval = *pval + (*pval * tx)/100;
+}
