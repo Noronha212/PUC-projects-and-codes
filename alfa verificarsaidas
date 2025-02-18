@@ -7,24 +7,30 @@
 
 #include <stdio.h>  //biblioteca padrão da linguaguem C
 
+//Declaração do tipo boleano/lógico
+#ifndef _Booleano_h
+        #define _Booleano_h
+        typedef enum{FALSE,TRUE} bool;
+#endif
+
+bool vfc; //Declaraçaõ da variável boleana vfc(verificar)
+
 int main(){
-	
-	int boleano;
 	
 	float a = 1.547;
 	float b = 3.276;
-	float c = 4.823;
+	float c = 2.823;
 	float d;
 	
 	d = a + b;
 	
 	if (c == d){
-		boleano = 1;
+		vfc = TRUE;
 	} else {
-		boleano = 0;
+		vfc = FALSE;
 	}
 	
-	if(boleano){
+	if(vfc){
 		printf("\n\nIgual\n");
 	} else {
 		printf("\n\nDiferente\n");
