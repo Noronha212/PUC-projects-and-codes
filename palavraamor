@@ -5,7 +5,7 @@
   Descricão: o progarma deve definir a palavra AMOR e mostra-la na tela
 */
 
-#include <iostream>
+#include <stdio.h>
 
 int main(){
 	
