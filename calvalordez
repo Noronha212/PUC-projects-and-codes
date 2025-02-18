@@ -1,0 +1,21 @@
+/*
+  Arquivo: calvalordez.c
+  Autor: MAtheus Guido Noronha Moreira PAssOS
+  Date: 18/02/25
+  Descricão: o programa deve calcular o valor de z com base nas variaveis definidas x e y
+*/
+
+#include <stdio.h>  //biblioteca padrão da linguaguem C
+#include <math.h>   //bliblioteca necessaria para a execussão do cálculo
+
+int main(){
+	
+	float x = 40545;
+	float y = 70226;
+	
+	float z = (9*pow(x, 4)) - (pow(y, 4) + pow(y, 2));
+	
+	printf("%.0f", z);
+	
+ return 0;
+}
