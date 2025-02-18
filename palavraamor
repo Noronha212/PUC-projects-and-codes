@@ -1,0 +1,15 @@
+/*
+  Arquivo: palavraamor.c
+  Autor MAtheus Guido Noronha Moreira PAssOS
+  Date: 18/02/25
+  Descricão: o progarma deve definir a palavra AMOR e mostra-la na tela
+*/
+
+#include <iostream>
+
+int main(){
+	
+	char plv[5] = "AMOR";
+	printf(plv);
+	
+}
