@@ -1,0 +1,39 @@
+/*
+  Arquivo: verificarvalordea.c
+  Autor: MAtheus Guido Noronha Moreira PAssOS
+  Date: 18/02/25
+  Descricão: o programa deve testar se o valor da variavel a é igual a 0 e apresentar a resposta
+*/
+
+#include <stdio.h>  //biblioteca padrão da linguaguem C
+
+//Declaração do tipo boleano/lógico
+#ifndef _Booleano_h
+        #define _Booleano_h
+        typedef enum{FALSE,TRUE} bool;
+#endif
+
+bool vfc; //Declaraçaõ da variável boleana vfc(verificar)
+
+int main(){
+	
+	bool ok;
+	
+	int a;
+	
+	a = 0;
+	
+	if(a == 0){
+		ok = TRUE;
+	} else {
+		ok = FALSE;
+	}
+	
+	if(ok){
+		printf("\na e igual\n");
+	} else {
+		printf("\na e igual\n");
+	}
+	
+ return 0;
+}
