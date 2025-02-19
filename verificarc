@@ -1,0 +1,26 @@
+/*
+  Arquivo: verificarc.c
+  Autor: MAtheus Guido Noronha Moreira PAssOS
+  Date: 18/02/25
+  Descricão: o programa deve testar se o valor da variavel c é igual a 2.1 e apresentar a resposta
+*/
+
+#include <stdio.h>  //biblioteca padrão da linguaguem C
+
+int main(){
+	
+	double a, b, c;
+	
+	a = 12.0;
+	b = 9.9;
+	
+	c = a - b;
+	
+	if(c == 2.1){
+		printf("\nTRUE\n");
+	} else {
+		printf("\nFALSE\n");
+	}
+	
+ return 0;
+}
